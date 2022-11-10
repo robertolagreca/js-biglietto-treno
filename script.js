@@ -37,7 +37,7 @@ prezzoBtn.addEventListener('click', function(){
         document.getElementById("output-sconto").innerHTML = "Tariffa standard";
        // document.getElementById("ticket").innerHTML =  "Il prezzo con tariffa standard è " + prezzoBiglietto + "€";
     
-        if (etaPasseggero < 18) {
+        if (etaPasseggero < 18 && etaPasseggero > 0) {
     
             prezzoBigliettoScontato = (prezzoBiglietto * 0.8).toFixed(2);
     
@@ -82,7 +82,8 @@ prezzoBtn.addEventListener('click', function(){
         -----------------------------------------------
         -----------------------------------------------
         -----------------------------------------------` );
-    
+
+        document.getElementById("output-sconto").innerHTML = "In uno o più campi non hai inserito un numbero. Ricarica la pagina e riprova";
         //document.getElementById("ticket").innerHTML =  "In uno o più campi non hai inserito un numbero. Ricarica la pagina e riprova";
     
     }
