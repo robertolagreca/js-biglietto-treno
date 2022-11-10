@@ -33,7 +33,8 @@ prezzoBtn.addEventListener('click', function(){
         ` );
     
         prezzoBigliettoScontato = prezzoBiglietto;
-    
+
+        document.getElementById("output-sconto").innerHTML = "Tariffa standard";
        // document.getElementById("ticket").innerHTML =  "Il prezzo con tariffa standard è " + prezzoBiglietto + "€";
     
         if (etaPasseggero < 18) {
@@ -49,6 +50,7 @@ prezzoBtn.addEventListener('click', function(){
         -----------------------------------------------
         ` );
     
+        document.getElementById("output-sconto").innerHTML = "Tariffa under 18. Applicazione del 20% di sconto";
         //document.getElementById("ticket").innerHTML =  "Il prezzo con tariffa under 18 è " + prezzoBigliettoScontato + "€";
     
         } else if (etaPasseggero > 64) {
@@ -63,6 +65,8 @@ prezzoBtn.addEventListener('click', function(){
         --------------------${prezzoBigliettoScontato} €--------------------
         -----------------------------------------------
         ` );
+
+        document.getElementById("output-sconto").innerHTML = "Tariffa over 65. Applicazione del 40% di sconto";
         //document.getElementById("ticket").innerHTML =  "Il prezzo con tariffa over 65 è " + prezzoBigliettoScontato + "€";
     }
     
@@ -84,5 +88,7 @@ prezzoBtn.addEventListener('click', function(){
     }
 
 
-    document.getElementById("output-costo").innerHTML ="Il costo è :" + prezzoBigliettoScontato;
+    document.getElementById("output-costo").innerHTML ="Il costo è: " + prezzoBigliettoScontato;
+
+
     });
