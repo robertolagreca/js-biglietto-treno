@@ -26,6 +26,8 @@ if (!isNaN(kmPercorso) && !isNaN(etaPasseggero)) {
 
     prezzoBigliettoScontato = prezzoBiglietto;
 
+    document.getElementById("ticket").innerHTML =  "Il prezzo con tariffa standard è " + prezzoBiglietto + "€";
+
     if (etaPasseggero < 18) {
 
         prezzoBigliettoScontato = (prezzoBiglietto * 0.8).toFixed(2);
@@ -39,6 +41,8 @@ if (!isNaN(kmPercorso) && !isNaN(etaPasseggero)) {
     -----------------------------------------------
     ` );
 
+    document.getElementById("ticket").innerHTML =  "Il prezzo con tariffa under 18 è " + prezzoBigliettoScontato + "€";
+
     } else if (etaPasseggero > 64) {
 
         prezzoBigliettoScontato = (prezzoBiglietto * 0.6).toFixed(2);
@@ -46,13 +50,15 @@ if (!isNaN(kmPercorso) && !isNaN(etaPasseggero)) {
         console.log(` 
     -----------------------------------------------
     Applicazione-----------------------------------
-    Tariffa under 18-------------------------------
+    Tariffa over 65-------------------------------
     Al prezzo è stato applicato uno sconto del 40%
     --------------------${prezzoBigliettoScontato} €--------------------
     -----------------------------------------------
     ` );
-    }
+    document.getElementById("ticket").innerHTML =  "Il prezzo con tariffa over 65 è " + prezzoBigliettoScontato + "€";
+}
 
+    
 } else {
     console.log(`
     -----------------------------------------------
@@ -64,4 +70,8 @@ if (!isNaN(kmPercorso) && !isNaN(etaPasseggero)) {
     -----------------------------------------------
     -----------------------------------------------
     -----------------------------------------------` );
+
+    document.getElementById("ticket").innerHTML =  "In uno o più campi non hai inserito un numbero. Ricarica la pagina e riprova";
+
 }
+
